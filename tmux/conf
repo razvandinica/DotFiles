@@ -1,31 +1,31 @@
+# Use <C-I> for Tmux Install or Tmux Reload Environment
+# Use <C-U> for Tmux Plugins Update
+# Use <C-R> in order to 'source' this file
+
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'seebi/tmux-colors-solarized'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 
-# Other examples:
-# set -g @plugin 'github_username/plugin_name'
-# set -g @plugin 'git@github.com/user/plugin'
-# set -g @plugin 'git@bitbucket.com/user/plugin'
-
-#####################
+# Solarized Theme Options
 set-option -ga terminal-overrides ",xterm-256color:Tc"
 set -g @colors-solarized 'dark'
 
+# Tmux Options
 set -g status-left-length 100
-
 set-option -g prefix C-a
 unbind-key C-b
 bind-key C-a send-prefix
-### bind-key X confirm-before -p "Kill #S (y/n)?" "run-shell 'tmux switch-client -n \\\; kill-session -t \"#S\"'"
 bind-key X confirm-before -p "Kill #S (y/n)?" "run-shell 'kill-session -t \"#S\"'"
 
+# Resurect Plugin Options
+set -g @resurrect-save 'S' # Use to Save All Tmux Environment
+set -g @resurrect-restore 'RS' # Use to Restore, uppeprcase R is conflicting with tmux source this conf
+
+# Tmux Plugins Installation
 if "test ! -d ~/.config/tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm && ~/.config/tmux/plugins/tpm/bin/install_plugins'"
-
-# set -g @resurrect-save 'S'
-# set -g @resurrect-restore 'R'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.config/tmux/plugins/tpm/tpm'
