@@ -1,0 +1,7 @@
+require('options')
+require('plugins/lazy')
+require('plugins/solarized')
+require('plugins/lualine')
+require('plugins/treesitter')
+require('plugins/telescope')
+require('plugins/nvimtree')
