@@ -1,6 +1,8 @@
 -- Just in case
 vim.opt.encoding="utf-8"
 
+vim.opt.termguicolors = true
+
 -- A Better View of Messages
 vim.opt.cmdheight=2
 
@@ -28,3 +30,16 @@ vim.keymap.set('n', 'bw', ':bw<CR>', {})
 vim.keymap.set('n', 'bl', ':bl<CR>', {})
 
 vim.opt.signcolumn="yes:2"
+
+-- Clear Search Highlighting
+vim.keymap.set('n', '<Esc>', ":noh<CR>")
+
+-- Set Listchars Chars
+vim.opt.listchars["tab"] = "→"
+vim.opt.listchars["precedes"] = "«"
+vim.opt.listchars["space"] = "·"
+vim.opt.listchars["trail"] = "•" -- »
+vim.opt.listchars["eol"] = "¶"
+
+-- Show/Hide Listchars
+vim.keymap.set('n', '<Leader>l', ":set list!<cr>")
