@@ -20,7 +20,16 @@ local plugins = {
   'maxmx03/solarized.nvim',
   'nvim-tree/nvim-web-devicons', -- Dependency for nvim-tree and lualine
   'nvim-lualine/lualine.nvim',
+  'akinsho/bufferline.nvim', version="*",
   'nvim-tree/nvim-tree.lua',
+  'lewis6991/gitsigns.nvim',
+  'tpope/vim-commentary',
+  'tpope/vim-sleuth',
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {}
+  }
 }
 local opts = {
 }
