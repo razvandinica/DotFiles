@@ -15,8 +15,8 @@ require('lualine').setup {
     lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = { 'filename' },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' },
+    lualine_y = { 'progress' }, -- xx%
+    lualine_z = { 'location' }, -- linenr:total
   },
   inactive_sections = {
     lualine_a = {},
@@ -27,7 +27,6 @@ require('lualine').setup {
     lualine_z = {},
   },
   tabline = {
-    
   },
   winbar = {
   },
