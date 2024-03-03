@@ -13,11 +13,22 @@ require('nvim-tree').setup({
     width = 40
   },
   renderer = {
-    group_empty = false
+    group_empty = false,
+    indent_markers = {
+      enable = false,
+    },
+    icons = {
+      show = {
+        folder_arrow = false,
+      }
+    }
   },
   filters = {
     dotfiles = true
   },
 })
+
+--NvimTreeWinSeparator = { fg = c.fg_rootfolder }
+--NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
 
 vim.keymap.set('n', '<F9>', api.tree.toggle, {})
