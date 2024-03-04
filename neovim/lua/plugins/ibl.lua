@@ -1,17 +1,16 @@
--- local highlight = {
---     "RainbowRed",
---     "RainbowYellow",
---     "RainbowBlue",
---     "RainbowOrange",
---     "RainbowGreen",
---     "RainbowViolet",
---     "RainbowCyan",
--- }
-
 local highlight = {
+    -- "RainbowRed",
+    -- "RainbowYellow",
+    -- "RainbowBlue",
+    -- "RainbowOrange",
+    -- "RainbowGreen",
+    -- "RainbowViolet",
+    -- "RainbowCyan",
+    -- "Directory",
     -- "Title",
-    -- "WarningMsg"
-    "MyOrange",
+    -- "WarningMsg",
+    -- "SolarizedDarkBased03",
+    "SolarizedDarkBased02",
 }
 
 local hooks = require "ibl.hooks"
@@ -42,12 +41,28 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
 
     vim.api.nvim_set_hl(0, "MyOrange", {
         fg = "#742b0c",
-        --bg = "#002b36"
     })
 
     vim.api.nvim_set_hl(0, "MyViolet", {
         fg = "#3d4070",
-        --bg = "#002b36"
+    })
+
+    vim.api.nvim_set_hl(0, "WinSeparator", {
+        fg = "#073642",
+    })
+
+    vim.api.nvim_set_hl(0, "SolarizedDarkBased03", {
+        fg = "#002b36",
+    })
+    vim.api.nvim_set_hl(0, "SolarizedDarkBased02", {
+        fg = "#073642",
+        -- bg = "#073642",
+    })
+    vim.api.nvim_set_hl(0, "SolarizedDarkBased01", {
+        fg = "#586375",
+    })
+    vim.api.nvim_set_hl(0, "SolarizedDarkBased00", {
+        fg = "#657b83",
     })
 end)
 
@@ -57,7 +72,7 @@ require("ibl").setup {
         char = "▏",
     },
     whitespace = {
-        --highlight = highlight,
+        -- highlight = highlight,
         remove_blankline_trail = true,
     },
     scope = {

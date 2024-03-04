@@ -18,16 +18,35 @@ local plugins = {
   'nvim-treesitter/nvim-treesitter', -- Dependency for telescope
   'nvim-telescope/telescope.nvim', branch = '0.1.x',
   'maxmx03/solarized.nvim',
-  'nvim-tree/nvim-web-devicons', -- Dependency for nvim-tree and lualine
-  'nvim-lualine/lualine.nvim',
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons'
+    }
+  },
   'akinsho/bufferline.nvim', version="*",
-  'nvim-tree/nvim-tree.lua',
+  {
+    'nvim-tree/nvim-tree.lua',
+    lazy = true,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons'
+    }
+  },
   'lewis6991/gitsigns.nvim',
   'tpope/vim-commentary',
   'tpope/vim-sleuth',
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
+    opts = {}
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
     opts = {}
   }
 }

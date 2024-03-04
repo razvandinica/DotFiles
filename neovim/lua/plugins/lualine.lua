@@ -1,7 +1,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
+    theme = require('lualine.themes.solarized'),
     always_divide_middle = true,
     global_status = true,
     refresh = {

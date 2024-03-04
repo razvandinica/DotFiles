@@ -1,4 +1,12 @@
 require('solarized').setup({
+  enables = {
+    bufferline = true,
+    editor = true,
+    syntax = true,
+    telescope = true,
+    treesitter = true,
+    indentblankline = true,
+  },
   transparent = true,
   palette = 'solarized', --selenized
 --  styles = {
@@ -11,17 +19,10 @@ require('solarized').setup({
 --    keywords = {},
 --    types = {},
 --  },
-  enables = {
-    editor = true,
-    syntax = true,
-    telescope = true,
-    treesitter = true,
-  },
 --  highlights = {
 --  },
 --  colors = {
 --  },
-  theme = 'default', -- or neo
   autocmd = true
 })
 vim.o.background = 'dark'

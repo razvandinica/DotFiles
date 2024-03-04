@@ -23,23 +23,22 @@ vim.opt.expandtab=true
 vim.opt.laststatus=3
 
 -- Easier Buffers Management
-vim.keymap.set('n', 'bn', ':bn<CR>', {})
-vim.keymap.set('n', 'bp', ':bp<CR>', {})
-vim.keymap.set('n', 'bk', ':bd<CR>', {})
-vim.keymap.set('n', 'bw', ':bw<CR>', {})
-vim.keymap.set('n', 'bl', ':bl<CR>', {})
-
-vim.opt.signcolumn="yes:2"
+vim.keymap.set('n', 'bn', ':bnext<CR>', {})
+vim.keymap.set('n', 'bp', ':bprevious<CR>', {})
+vim.keymap.set('n', 'bk', ':bdelete<CR>', {})
+vim.keymap.set('n', 'bw', ':bwipeout<CR>', {})
+-- vim.keymap.set('n', 'bl', ':bl<CR>', {})
 
 -- Clear Search Highlighting
 vim.keymap.set('n', '<Esc>', ":noh<CR>")
 
 -- Set Listchars Chars
-vim.opt.listchars["tab"] = "→"
-vim.opt.listchars["precedes"] = "«"
-vim.opt.listchars["space"] = "·"
-vim.opt.listchars["trail"] = "•" -- »
-vim.opt.listchars["eol"] = "¶"
+-- vim.opt.listchars["tab"] = "→"
+-- vim.opt.listchars["precedes"] = "«"
+-- vim.opt.listchars["space"] = "·"
+-- vim.opt.listchars["trail"] = "•" -- »
+-- vim.opt.listchars["eol"] = "¶"
 
 -- Show/Hide Listchars
-vim.keymap.set('n', '<Leader>l', ":set list!<cr>")
+-- vim.keymap.set('n', '<Leader>sl', ":set list!<cr>")
+

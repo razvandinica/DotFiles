@@ -17,6 +17,7 @@ treesitter.setup({
   indent = { enable = true },
   -- Ensure These Language Parsers are Installed
   ensure_installed = {
+    "lua",
     "json",
     "javascript",
     "typescript",
@@ -26,7 +27,6 @@ treesitter.setup({
     "markdown",
     "markdown_inline",
     "bash",
-    "lua",
     "vim",
     "php"
   },
