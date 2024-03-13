@@ -17,10 +17,10 @@ bufferline.setup({
       -- icon = '▎', -- this should be omitted if indicator style is not 'icon'
       style = 'none', -- | 'underline' | 'none',
     },
-    -- diagnostics = "nvim_lsp",
-    -- diagnostics_indicator = function(count, level)
-    --     local icon = level:match("error") and " " or ""
-    --     return " " .. icon .. count
-    -- end
+    diagnostics = "nvim_lsp",
+    diagnostics_indicator = function(count, level)
+        local icon = level:match("error") and " " or ""
+        return " " .. icon .. count
+    end
   },
 })

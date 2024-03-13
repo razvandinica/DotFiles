@@ -48,6 +48,23 @@ local plugins = {
       vim.o.timeoutlen = 300
     end,
     opts = {}
+  },
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = {
+      'kevinhwang91/promise-async'
+    }
+  },
+  {
+    'neovim/nvim-lspconfig',
+    event = 'VeryLazy',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim'
+    },
+    config = function()
+      -- require('plugins/lspconfig')
+    end,
   }
 }
 local opts = {

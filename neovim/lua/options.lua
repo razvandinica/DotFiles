@@ -6,9 +6,10 @@ vim.opt.termguicolors = true
 -- A Better View of Messages
 vim.opt.cmdheight=2
 
--- Folding and Indentation
-vim.opt.foldmethod='indent'
+-- Better Indentation
 vim.opt.smartindent=true
+
+-- Better Cursor Line
 vim.opt.wrap=false
 vim.opt.cursorline=true
 
@@ -42,3 +43,4 @@ vim.keymap.set('n', '<Esc>', ":noh<CR>")
 -- Show/Hide Listchars
 -- vim.keymap.set('n', '<Leader>sl', ":set list!<cr>")
 
+vim.opt.signcolumn = 'yes:2'

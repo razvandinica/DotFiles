@@ -33,3 +33,6 @@ treesitter.setup({
   -- Auto Install Above Language Parsers
   auto_install = true,
 })
+
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
