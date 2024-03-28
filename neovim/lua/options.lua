@@ -41,6 +41,13 @@ vim.keymap.set('n', '<Esc>', ":noh<CR>")
 -- vim.opt.listchars["eol"] = "¶"
 
 -- Show/Hide Listchars
--- vim.keymap.set('n', '<Leader>sl', ":set list!<cr>")
+vim.keymap.set('n', '<Leader>lc', ":set list!<CR>")
+vim.opt.listchars:append{tab = "» ", precedes = "<", extends = ">", eol = "¶"}
+vim.opt.list = false
 
 vim.opt.signcolumn = 'yes:2'
+
+-- Strip Empty Spaces at the end of each line
+vim.keymap.set('n', '<Leader>ss', ':%s/\\s\\+$//e<CR>')
+-- Strips Empty Lines at the end of each line
+vim.keymap.set('n', '<Leader>sl', ':%g/^$/d<CR>')
