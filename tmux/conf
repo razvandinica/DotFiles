@@ -2,22 +2,30 @@
 # Use <C-U> for Tmux Plugins Update
 # Use <C-R> in order to 'source' this file
 
-# List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'seebi/tmux-colors-solarized'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-
-# Solarized Theme Options
-set-option -ga terminal-overrides ",xterm-256color:Tc"
-set -g @colors-solarized 'dark'
-
-# Tmux Options
-set -g status-left-length 100
+### Set Some Sensible Keys
 set-option -g prefix C-a
 unbind-key C-b
 bind-key C-a send-prefix
 bind-key X confirm-before -p "Kill #S (y/n)?" "run-shell 'kill-session -t \"#S\"'"
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'seebi/tmux-colors-solarized'
+# Solarized Theme Options
+set-option -ga terminal-overrides ",xterm-256color:Tc"
+set -g @colors-solarized 'dark'
+
+###
+set-option -g status on
+set-option -g status-left " #(whoami)@#(hostname) "
+set-option -g status-left-length 50
+set-option -g status-justify "centre"
+set-option -g left-separator "◣"
+
+# split
+bind | split-window -h
+bind _ split-window -v
 
 # Resurect Plugin Options
 set -g @resurrect-save 'S' # Use to Save All Tmux Environment

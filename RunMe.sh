@@ -14,3 +14,7 @@ ln -s ${DOT_FILES_PATH}/kitty ${HOME}/.config/kitty
 
 rm -rf $HOME/.config/nvim
 ln -s ${DOT_FILES_PATH}/neovim ${HOME}/.config/nvim
+
+rm -rf $HOME/.themes/MyTheme
+mkdir -p ${HOME}/.themes/MyTheme/gnome-shell/
+ln -sf ${DOT_FILES_PATH}/gnometheme/gnome-shell.css ${HOME}/.themes/MyTheme/gnome-shell/gnome-shell.css

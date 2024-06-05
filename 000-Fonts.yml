@@ -1,0 +1,13 @@
+---
+- name: 'Prepare local fonts ...'
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Clone Nerd Fornts Repo ...
+      git:
+        repo: https://github.com/powerline/fonts.git
+        depth: 1
+        dest: $HOME/.local/share/fonts
+        clone: yes
+        update: yes
