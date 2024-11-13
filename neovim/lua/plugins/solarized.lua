@@ -11,7 +11,7 @@ return {
         treesitter = true,
         indentblankline = true,
       },
-      -- transparent = true,
+      --transparent = true,
       palette = 'selenized', --selenized
       styles = {
         comments = {},

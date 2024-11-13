@@ -21,7 +21,7 @@ set-option -g status on
 set-option -g status-left " #(whoami)@#(hostname) "
 set-option -g status-left-length 50
 set-option -g status-justify "centre"
-set-option -g left-separator "◣"
+#set-option -g left-separator "◣"
 
 # split
 bind | split-window -h

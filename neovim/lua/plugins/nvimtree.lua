@@ -22,7 +22,7 @@ return {
       },
       view = {
         number = false,
-        width = 48,
+        width = 40,
         signcolumn = 'yes'
       },
       renderer = {
