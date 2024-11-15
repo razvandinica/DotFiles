@@ -29,10 +29,6 @@ rm -rf $HOME/.themes/MyTheme
 mkdir -p $HOME/.themes/MyTheme/gnome-shell/
 ln -sf $DOT_FILES_PATH/gnometheme/gnome-shell.css $HOME/.themes/MyTheme/gnome-shell/gnome-shell.css
 
-# Create symlink into /etc/profile.d/ that points to local ./RemovePathDuplicates.sh.
-if [ -L "/etc/profile.d/RemovePathDuplicates.sh" ]; then
-  sudo rm -rf /etc/profile.d/RemovePathDuplicates.sh
-fi
-sudo ln -s $DOT_FILES_PATH/RemovePathDuplicates.sh /etc/profile.d/
+./RemovePathDuplicates.sh
 
 exit 0
