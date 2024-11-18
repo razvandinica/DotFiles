@@ -29,6 +29,10 @@ rm -rf $HOME/.themes/MyTheme
 mkdir -p $HOME/.themes/MyTheme/gnome-shell/
 ln -sf $DOT_FILES_PATH/gnometheme/gnome-shell.css $HOME/.themes/MyTheme/gnome-shell/gnome-shell.css
 
+# Handle symlinks for bash history autocompletion.
+rm -rf $HOME/.inputrc
+ln -sf $DOT_FILES_PATH/bash/inputrc $HOME/.inputrc
+
 ./RemovePathDuplicates.sh
 
 exit 0

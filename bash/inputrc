@@ -1,0 +1,9 @@
+# Enable history search based on partial input
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+#"\C-r": reverse-search-history
+#"\C-s": forward-search-history
+
+# Make history search case-insensitive
+set completion-ignore-case on
