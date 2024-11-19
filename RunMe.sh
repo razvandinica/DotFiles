@@ -33,6 +33,6 @@ ln -sf $DOT_FILES_PATH/gnometheme/gnome-shell.css $HOME/.themes/MyTheme/gnome-sh
 rm -rf $HOME/.inputrc
 ln -sf $DOT_FILES_PATH/bash/inputrc $HOME/.inputrc
 
-./RemovePathDuplicates.sh
+source RemovePathDuplicates.sh
 
 exit 0
