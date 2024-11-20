@@ -6,5 +6,5 @@
 # 4. tr '\n' ':'       - Back to colon-separated format.
 # 5. sed 's/:$//'      - Removes the trailing colon.
 
-export PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':' | sed 's/:$//')
+export FIXED_PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':' | sed 's/:$//')
 exit 0
