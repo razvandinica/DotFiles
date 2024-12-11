@@ -24,6 +24,7 @@ return {
           --right = "╱",
           left = "\u{e0b9}",
           right = "\u{e0bb}",
+          --right = "\u{f0fdf}"
         },
         always_divide_middle = true,
         global_status = true,

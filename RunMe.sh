@@ -25,9 +25,9 @@ rm -rf $HOME/.config/nvim
 ln -s $DOT_FILES_PATH/neovim $HOME/.config/nvim
 
 # Handle themes using: gnome-shell-extensions and gnome-tweak.
-rm -rf $HOME/.themes/MyTheme
-mkdir -p $HOME/.themes/MyTheme/gnome-shell/
-ln -sf $DOT_FILES_PATH/gnometheme/gnome-shell.css $HOME/.themes/MyTheme/gnome-shell/gnome-shell.css
+rm -rf $HOME/.local/share/themes/MyTheme
+mkdir -p $HOME/.local/share/themes/MyTheme/gnome-shell/
+ln -sf $DOT_FILES_PATH/gnometheme/gnome-shell.css $HOME/.local/share/themes/MyTheme/gnome-shell/gnome-shell.css
 
 # Handle symlinks for bash history autocompletion.
 rm -rf $HOME/.inputrc
