@@ -5,7 +5,7 @@ return {
     vim.opt.foldmethod = 'indent'
     -- vim.opt.foldlevel = 99
     -- vim.opt.foldlevelstart = 99
-    -- vim.opt.fillchars:append('fold:-')
+    vim.opt.fillchars:append('fold:-')
   end,
   init = function()
     local pf = require("pretty-fold")

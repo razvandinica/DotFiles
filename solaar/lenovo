@@ -1,7 +1,0 @@
-#!/usr/bin/env python3
-import subprocess
-
-subprocess.run(['solaar', 'config', 'MX Keys', 'change-host', '2'])
-subprocess.run(['solaar', 'config', 'MX Master 3', 'change-host', '2'])
-subprocess.run(['ddcutil', '--sn', 'GH85D58H028L', 'setvcp', '60', '0x12'])
-print('Done !')

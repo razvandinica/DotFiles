@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+import subprocess
+
+subprocess.run(['sudo', 'solaar', 'config', 'MX Keys', 'change-host', '2'])
+subprocess.run(['sudo', 'solaar', 'config', 'MX Master 3', 'change-host', '2'])
+subprocess.run(['sudo', 'ddcutil', '--sn', 'GH85D58H028L', 'setvcp', '60', '0x12'])
+
+print('Done !')
