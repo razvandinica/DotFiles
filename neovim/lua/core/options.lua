@@ -4,7 +4,7 @@ vim.opt.encoding="utf-8"
 vim.opt.termguicolors = true
 
 -- A Better View of Messages
-vim.opt.cmdheight=2
+vim.opt.cmdheight=3
 
 -- Better Indentation
 vim.opt.smartindent=true
@@ -56,6 +56,9 @@ vim.keymap.set('n', '<Leader>sl', ':%g/^$/d<CR>')
 --vim api.nvim_set_var("range", range(120,999))
 --vim.api.nvim_set_var("colorcolumn", "80,".join(range(120,999),','))
 -- vim.cmd('let &colorcolumn = "80,".join(range(120,999),",")')
+--
+--let &colorcolumn="80,".join(range(120,999),",")
+--highlight ColorColumn ctermbg=0 guibg=yellow
 
 
 -- WarningMsg     xxx cterm=bold gui=bold guifg=#dbb32d
@@ -68,9 +71,8 @@ vim.api.nvim_set_hl(0, "Folded", {
   fg="#dbb32d",
 })
 
-
--- vim.opt.foldenable = true
--- vim.opt.foldmethod = 'indent'
--- vim.opt.foldlevel = 99
--- vim.opt.foldlevelstart = 99
--- vim.opt.fillchars:append('fold:-')
+vim.opt.foldenable = true
+vim.opt.foldmethod = 'indent'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.fillchars:append('fold:~')

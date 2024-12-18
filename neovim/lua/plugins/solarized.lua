@@ -1,34 +1,19 @@
 return {
   'maxmx03/solarized.nvim',
-  --priority = 1000,
-  config = function()
-    require('solarized').setup({
-      enables = {
-        bufferline = true,
-        editor = true,
-        syntax = true,
-        telescope = true,
-        treesitter = true,
-        indentblankline = true,
-      },
-      --transparent = true,
-      palette = 'selenized', --selenized
-      styles = {
-        comments = {},
-        functions = {},
-        variables = {},
-        numbers = {},
-        constants = {},
-        parameters = {},
-        keywords = {},
-        types = {},
-      },
-      highlights = {
-      },
-      colors = {
-      },
-      autocmd = true
-    })
+  lazy = false,
+  priority = 1000,
+  opts = {
+    plugins = {
+      nvimtree = false,
+      bufferline = false,
+    },
+    transparent = {
+      enabled = true,
+    },
+    variant = 'summer',
+  },
+  config = function(_, opts)
+    require('solarized').setup(opts)
     vim.cmd.colorscheme 'solarized' --selenized
     vim.opt.background = 'dark'
   end,

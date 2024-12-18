@@ -1154,7 +1154,12 @@ StScrollBar {
 
 /* Top Bar */
 #panel {
-  background-color: #1d1d1d;
+  background-color: rgba(0, 43, 54, 0.85);
+  /*
+   * background-color: #1d1d1d; ORIGINAL
+   * background-color: rgba( 7,  54,  66, 0.5);
+   * background-color: rgba(88, 110, 117, 0.5);
+   */
   font-weight: bold;
   height: 34px;
   font-feature-settings: "tnum"; }

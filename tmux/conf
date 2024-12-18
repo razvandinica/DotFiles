@@ -43,14 +43,17 @@ set-window -g pane-base-index 1
 
 set-option -g status on
 set-option -g status-left-length 100
-set-option -g status-left "#{prefix_highlight}#[bg=yellow,fg=black] #(whoami) ╲ #(hostname) ╲ #S #[reverse]◣                 "
+# set-option -g status-left "#{prefix_highlight}#[bg=yellow,fg=black] #(whoami) ╲ #(hostname) ╲ #S #[reverse]◣                 "
+set-option -g status-left "#{prefix_highlight}#[bg=base0,fg=yellow] #(whoami)  #(hostname)  #S                  "
 
 set-option -g status-justify "left"
 set-window-option -g window-status-format " #W "
-set-option -g window-status-current-format "#[bg=green,fg=black]◣ #{window_index} ╲ #W #[reverse]◣"
-# 
+# set-option -g window-status-current-format "#[bg=base02,fg=red]◣ #{window_index}╲#W #[reverse]◣"
+set-option -g window-status-current-format " #{window_index}.#W "
+#  ╲ ╱ 
 
-set-option -g status-right "   ◢#[reverse]#(tmux-mem-cpu-load --colors --interval 3) ╱ #(curl https://ipinfo.io/ip) ╱ #(hostname -I)"
+# set-option -g status-right "   ◢#[reverse]#(tmux-mem-cpu-load --colors --interval 3) ╱ #(curl https://ipinfo.io/ip) ╱ #(hostname -I)"
+set-option -g status-right "#[fg=green]   #(tmux-mem-cpu-load --colors --interval 3) #(curl https://ipinfo.io/ip)  #(hostname -I)"
 set-option -g status-right-length 100
 
 # split
