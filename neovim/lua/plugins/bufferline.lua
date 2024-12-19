@@ -91,7 +91,7 @@ return {
       offsets = {
         {
           filetype = "NvimTree",
-          text = "NeoVim File Explorer \u{e7c5}",
+          text = "Neovim File Explorer ... \u{e7c5} ",
           -- text = function()
           --   return vim.fn.getcwd()
           -- end,
@@ -109,7 +109,7 @@ return {
         end,
         right = function()
           local result = {}
-          table.insert(result, {text = 'ABC'})
+          table.insert(result, {text = "Neovim Buffers Line ... \u{e7c5} "})
           return result
         end,
       },
