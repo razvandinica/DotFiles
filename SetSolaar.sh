@@ -18,6 +18,10 @@ declare -a solarFiles=(
 # Get absolute path of the current directory.
 DOT_FILES_PATH=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
+if [ ! -d "$HOME/.local/bin" ] ; then
+    mkdir -p "${HOME}/.local/bin"
+fi
+
 # Remove all previous linked files.
 for file in "${solarFiles[@]}"; do
     pathToFile="${HOME}/.local/bin/${file}"
