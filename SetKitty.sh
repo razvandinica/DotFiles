@@ -7,11 +7,6 @@ fi
 # Get absolute path of the current directory.
 DOT_FILES_PATH=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-. SetTmux.sh
-. SetNeovim.sh
-. setSolaar.sh
-. setGnomeShellThemes.sh
-. setBash.sh
-. RemovePathDuplicates.sh
-
-exit 0
+# Handle symlinks for kitty editor.
+rm -rf $HOME/.config/kitty
+ln -s $DOT_FILES_PATH/kitty $HOME/.config/kitty

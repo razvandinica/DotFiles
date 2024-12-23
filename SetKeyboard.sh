@@ -5,5 +5,3 @@ if [ "${DEBUG}" == "true" ]; then
 fi
 
 sudo dpkg-reconfigure keyboard-configuration
-
-exit 0

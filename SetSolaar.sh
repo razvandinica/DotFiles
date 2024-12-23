@@ -48,4 +48,3 @@ echo -e " ==> Solaar link are back in place!"
 echo -e "$YELLOW"
 echo -e " ==> DONE!"
 echo -e "$NC"
-exit 0
