@@ -50,12 +50,13 @@ sudo mv "${HOME}/.local/bin/nvim-linux64" "/opt/nvim-linux64-${NVIM_VERSION}"
 echo -e "${GREEN}"
 echo -e "==> OK"
 
-echo -e "${RED}"
-echo -e " ==> Create a  symlink to NO version."
-sudo ln -sf "/opt/nvim-linux64-${NVIM_VERSION}" "/opt/nvim-linux64"
-echo -e "${GREEN}"
-ls -lah /opt
-echo -e "==> OK"
+# echo -e "${RED}"
+# echo -e " ==> Create a  symlink to NO version."
+# sudo ln -sf "/opt/nvim-linux64-${NVIM_VERSION}" "/opt/nvim-linux64"
+# echo -e "${GREEN}"
+# ls -lah /opt
+# echo -e "==> OK"
+# Instead of linking into a non version folder see UPDATE-ALTERNATIVES
 
 echo -e "$NC"
 read -p " ==> Press [ENTER] to continue !"
