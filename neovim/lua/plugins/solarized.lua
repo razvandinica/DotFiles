@@ -4,13 +4,14 @@ return {
   priority = 1000,
   opts = {
     plugins = {
-      nvimtree = false,
-      bufferline = false,
+      nvimtree = true,
+      bufferline = true,
+      lualine = true,
     },
     transparent = {
       enabled = true,
     },
-    variant = 'summer',
+    variant = 'winter',
   },
   config = function(_, opts)
     require('solarized').setup(opts)
