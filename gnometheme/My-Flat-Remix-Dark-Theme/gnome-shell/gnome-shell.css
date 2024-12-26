@@ -20,7 +20,7 @@
 /* Global Values */
 stage {
   font-family: Ubuntu Condensed;
-  font-size: 2em;
+  font-size: 14pt;
   color: #eeeeec;
 }
 
@@ -1741,9 +1741,8 @@ StScrollBar {
 
 /* Top Bar */
 #panel {
-  background-color: rgba(35, 37, 46, 0.8);
-  font-weight: normal;
-  height: 3em;
+  background-color: rgba(35, 37, 46, 0.6);
+  height: 32px;
   /*
   font-weight: bold;
   height: 2.2em;
@@ -1751,10 +1750,10 @@ StScrollBar {
   transition-duration: 250ms; }
   #panel .panel-button {
     transition-duration: 150ms;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     background-color: transparent;
     border-radius: 999px;
-    font-weight: bold;
+    font-weight: normal;
     color: #eeeeec;
     box-shadow: inset 0 0 0 100px transparent;
     -natural-hpadding: 12px;
