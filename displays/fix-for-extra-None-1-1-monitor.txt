@@ -1,0 +1,6 @@
+# A file /etc/X11/xorg.conf.d/10-monitor.conf
+# should contain the following for fixing the bug
+Section "Monitor"
+Identifier "None-1-1"
+Option "Ignore" "true"
+EndSection
