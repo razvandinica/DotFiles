@@ -35,7 +35,7 @@ read -p " ==> Press [ENTER] to continue !"
 mkdir -p "${TMUX_CONFIG_PATH}/plugins"
 
 # Handle symlink for tmux config file.
-ln -s "${DOT_FILES_PATH}/tmux/conf" "${HOME}/.tmux.conf"
+ln -s "${DOT_FILES_PATH}/tmux/conf" "${HOME}/.config/tmux/tmux.conf"
 echo -e " ==> ${HOME} tmux configs are looking like this:"
 ls -lah "${HOME}" | grep tmux
 ls -lah "${TMUX_CONFIG_PATH}"
