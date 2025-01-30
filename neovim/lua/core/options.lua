@@ -21,7 +21,7 @@ vim.opt.relativenumber=false
 vim.opt.expandtab=true
 
 -- Better Status Line
-vim.opt.laststatus=3
+vim.opt.laststatus=2
 
 -- Easier Buffers Management
 vim.keymap.set('n', 'bn', ':bnext<CR>', {})
