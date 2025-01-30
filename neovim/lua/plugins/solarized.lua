@@ -4,9 +4,9 @@ return {
   priority = 1000,
   opts = {
     plugins = {
-      nvimtree = true,
-      bufferline = true,
-      lualine = true,
+      nvimtree = false,
+      bufferline = false,
+      lualine = false,
     },
     transparent = {
       enabled = true,

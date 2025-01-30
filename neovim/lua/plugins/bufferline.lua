@@ -75,7 +75,8 @@ return {
     options = {
       mode = 'buffers',
       themable = true,
-      separator_style = {'','◢'},
+      separator_style = {'',''},
+      -- separator_style = {'','◢'},
       -- separator_style = {'◣','◢'},
       -- separator_style = 'thin', -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
       show_buffer_icons = true, --true | false, -- disable filetype icons for buffers

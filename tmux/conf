@@ -1,6 +1,11 @@
-set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins'
+# Use <C-I> for Tmux Install or Tmux Reload Environment
+# Use <C-U> for Tmux Plugins Update
+# Use <C-R> in order to 'source' this file
 
-set-environment -g base03  '#002b36'
+set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins'
+set-option -sa terminal-overrides ",xterm*:Tc"
+
+set-environment -g base04  '#002b36'
 set-environment -g base02  '#073642'
 set-environment -g base01  '#586e75'
 set-environment -g base00  '#657b83'
@@ -17,10 +22,6 @@ set-environment -g blue    '#268bd2'
 set-environment -g cyan    '#2aa198'
 set-environment -g green   '#859900'
 
-# Use <C-I> for Tmux Install or Tmux Reload Environment
-# Use <C-U> for Tmux Plugins Update
-# Use <C-R> in order to 'source' this file
-
 ### Set Some Sensible Keys
 set-option -g prefix C-a
 unbind-key C-b
@@ -34,34 +35,46 @@ set -g @plugin 'thewtex/tmux-mem-cpu-load'
 set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
 set -g @plugin 'seebi/tmux-colors-solarized'
 # Solarized Theme Options
-set-option -ga terminal-overrides ",xterm-256color:Tc"
 set -g @colors-solarized 'dark'
 
 ###
+###  ╲ ╱ 
 set-option -g base-index 1
 set-window -g pane-base-index 1
 
 set-option -g status on
 set-option -g status-left-length 100
-# set-option -g status-left "#{prefix_highlight}#[bg=yellow,fg=black] #(whoami) ╲ #(hostname) ╲ #S #[reverse]◣                 "
-set-option -g status-left "#{prefix_highlight}#[bg=base0,fg=yellow] #(whoami)  #(hostname)  #S                  "
-
-set-option -g status-justify "left"
-set-window-option -g window-status-format " #W "
-# set-option -g window-status-current-format "#[bg=base02,fg=red]◣ #{window_index}╲#W #[reverse]◣"
-set-option -g window-status-current-format " #{window_index}.#W "
-#  ╲ ╱ 
-
-# set-option -g status-right "   ◢#[reverse]#(tmux-mem-cpu-load --colors --interval 3) ╱ #(curl https://ipinfo.io/ip) ╱ #(hostname -I)"
-set-option -g status-right "#[fg=green]   #(tmux-mem-cpu-load --colors --interval 3) #(curl https://ipinfo.io/ip)  #(hostname -I)"
 set-option -g status-right-length 100
+set-option -g status-justify "left"
+
+#set-option -g @bb "$base01"
+set-option -g @bb "black"
+set-option -g @lc "$base02"
+set-option -g @lw "$yellow"
+
+set-option -g @cc "$base02"
+set-option -g @cw "$base0"
+set-option -g @aw "$magenta"
+
+set-option -g @rc "$base02"
+set-option -g @rw "$green"
+
+set-option -g status-bg "black"
+set-option -g status-fg "${base0}"
+
+set-option -g status-left "#[fg=#{@lw}]#{prefix_highlight}#[bg=#{@lc},fg=#{@bb}]◣#[bg=#{@lc},fg=#{@lw}] #(whoami) @ #(hostname) ╲ #S #[bg=#{@bb},fg=#{@lc}]◣           ..."
+set-window-option -g window-status-format "#[bg=#{@bb},fg=#{@cw}] #W "
+set-option -g window-status-current-format "#[bg=#{@cc},fg=#{@bb}]◣#[fg=#{@aw}] #W #[bg=#{@bb},fg=#{@cc}]◣"
+set-option -g status-right "#[bg=#{@bb},fg=#{@cw},bold] #(curl https://ipinfo.io/ip) #[bg=#{@bb},fg=#{@rc},nobold]◢#[bg=#{@rc},fg=#{@rw}] ... cpu load ... ╱ #(hostname -I) ╱ #[bg=#{@rc},fg=#{@bb}]◢#{prefix_highlight}"
 
 # split
 bind | split-window -h
 bind _ split-window -v
 
-set -g @prefix_highlight_fg 'white' # default is 'colour232'
-set -g @prefix_highlight_bg 'blue'  # default is 'colour05'
+set -g @prefix_highlight_empty_prompt  " Tmux   "
+set -g @prefix_highlight_prefix_prompt "CTRL-A"
+set -g @prefix_highlight_fg "magenta"
+set -g @prefix_highlight_bg "black"
 
 # Resurect Plugin Options
 set -g @resurrect-save 'S' # Use to Save All Tmux Environment
