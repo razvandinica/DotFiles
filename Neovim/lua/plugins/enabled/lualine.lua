@@ -1,6 +1,8 @@
 return {
+  -- https://github.com/nvim-lualine/lualine.nvim
   'nvim-lualine/lualine.nvim',
   dependencies = {
+    -- https://github.com/nvim-tree/nvim-web-devicons
     'nvim-tree/nvim-web-devicons'
   },
   init = function()
@@ -11,6 +13,7 @@ return {
     lualine = require('lualine')
     lualine.setup({
       options = {
+        globalstatus = true,
         icons_enabled = true,
         theme = require('lualine.themes.solarized'),
         section_separators = {
@@ -27,7 +30,6 @@ return {
           --right = "\u{f0fdf}"
         },
         always_divide_middle = true,
-        global_status = true,
         refresh = {
           statusline = 1000,
           tabline = 1000,
@@ -87,7 +89,7 @@ return {
       inactive_winbar = {
       },
       extentions = {
-        'nvim-tree',
+        --'nvim-tree',
         'symbols-outline',
       }
     })

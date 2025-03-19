@@ -23,7 +23,7 @@ echo -e "$NC"
 read -p " ==> Press [ENTER] to continue !"
 
 # Handle symlink for neovim.
-ln -s $DOT_FILES_PATH/neovim $HOME/.config/nvim
+ln -s $DOT_FILES_PATH/Neovim $HOME/.config/nvim
 echo -e " ==> ~/.config/nvim folder is looking like this:"
 ls -lah "${HOME}/.config/nvim/"
 echo -e "$GREEN"
