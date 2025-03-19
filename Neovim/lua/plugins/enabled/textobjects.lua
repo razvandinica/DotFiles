@@ -1,11 +1,11 @@
 return {
   -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-  "nvim-treeesitter/nvim-treesitter-textobjects",
+  "nvim-treesitter/nvim-treesitter-textobjects",
   dependencies = {
     "nvim-treesitter/nvim-treesitter"
   },
   init = function ()
-    require'nvim-treesitter.configs'.setup {
+    require'nvim-treesitter.configs'.setup({
       textobjects = {
         select = {
           enable = true,
@@ -15,6 +15,7 @@ return {
 
           keymaps = {
             -- You can use the capture groups defined in textobjects.scm
+            ["ao"] = "@comment.outer",
             ["af"] = "@function.outer",
             ["if"] = "@function.inner",
             ["ac"] = "@class.outer",
@@ -47,7 +48,16 @@ return {
           -- and should return true or false
           include_surrounding_whitespace = true,
         },
-      },
-    }
+        swap = {
+          enable = true,
+          swap_next = {
+            ["<leader>a"] = "@parameter.inner",
+          },
+          swap_previous = {
+            ["<leader>A"] = "@parameter.inner",
+          },
+        },
+      }
+    })
   end,
 }
