@@ -6,11 +6,11 @@ return {
     'nvim-tree/nvim-web-devicons'
   },
   init = function()
-    colors = {
+    local colors = {
       blue = '#80a0ff',
       cyan = '#79dac8',
     }
-    lualine = require('lualine')
+    local lualine = require('lualine')
     lualine.setup({
       options = {
         globalstatus = true,
@@ -23,10 +23,10 @@ return {
           -- right = "\u{e0b2}",
         },
         component_separators = {
-          --left = "╲",
-          --right = "╱",
-          left = "\u{e0b9}",
-          right = "\u{e0bb}",
+          left = "╲",
+          right = "╱",
+          -- left = "\u{e0b9}",
+          -- right = "\u{e0bb}",
           --right = "\u{f0fdf}"
         },
         always_divide_middle = true,
@@ -37,7 +37,16 @@ return {
         },
       },
       sections = {
-        lualine_a = { 'mode' },
+        lualine_a = {
+          {
+            function()
+              return '\u{e6ae}'
+            end,
+          },
+          {
+            'mode'
+          },
+        },
         lualine_b = {
           {
             'filename',
@@ -46,6 +55,9 @@ return {
           },
         },
         lualine_c = {
+          {
+            "require'lsp-status'.status()"
+          },
           {
             'branch',
           },
@@ -70,7 +82,7 @@ return {
             },
           },
         },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_x = { 'searchcount', 'encoding', 'fileformat', 'filetype', 'filesize' },
         lualine_y = { 'progress' }, -- xx%
         lualine_z = { 'location' }, -- linenr:total
       },
@@ -88,7 +100,7 @@ return {
       },
       inactive_winbar = {
       },
-      extentions = {
+      extensions = {
         --'nvim-tree',
         'symbols-outline',
       }

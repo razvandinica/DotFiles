@@ -5,17 +5,21 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   opts = {
+    ui = {
+      height = 0.5,
+      border = "single",
+    }
   },
   keys = {
     {
       "<Leader>ff",
       function() require'fzf-lua'.files() end,
-      desc = "Find files in current working directory."
+      desc = "[F]ind [F]iles in current working directory."
     },
     {
       "<Leader>fg",
       function() require'fzf-lua'.live_grep() end,
-      desc = "Find by grepping files in current working directory."
+      desc = "[F]ind by [G]repping files in current working directory."
     },
     {
       "<Leader>fw",
@@ -25,12 +29,17 @@ return {
     {
       "<Leader>gb",
       function() require'fzf-lua'.git_branches() end,
-      desc = "Find branches in current working project."
+      desc = "Find [G]it [B]ranches in current working project."
     },
     {
       "<Leader>bi",
       function() require'fzf-lua'.builtin() end,
-      desc = "Show FZF builtin available commands."
+      desc = "Show FZF [B]uilt[I]n available commands."
+    },
+    {
+      "<Leader>fb",
+      function() require'fzf-lua'.buffers() end,
+      desc = "[F]ind [B]ufferrs."
     },
     {
       "<Leader>fh",
@@ -50,12 +59,7 @@ return {
     {
       "<Leader>fr",
       function() require'fzf-lua'.resume() end,
-      desc = "[F][R]esume to last find."
-    },
-    {
-      "<Leader><Leader>",
-      function() require'fzf-lua'.buffers() end,
-      desc = "[F]ind [B]uffers."
+      desc = "[Find] [R]esume."
     },
   },
 }

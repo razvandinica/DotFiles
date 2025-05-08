@@ -1,7 +1,11 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  opts = {},
+  opts = {
+    ui = {
+      border = "rounded",
+    }
+  },
   keys = {
     {
       "<Leader>?",

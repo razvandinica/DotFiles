@@ -4,7 +4,12 @@ return {
   cmd = "ShowkeysToggle",
   opts = {
     timeout = 3,
-    maxkeys = 7,
-    position = "top-right"
-  }
+    maxkeys = 10,
+    position = "top-right",
+    show_count = true,
+  },
+  config = function (_, opts)
+    require'showkeys'.setup(opts)
+    vim.keymap.set('n', '<Leader>sk', "<Cmd>ShowkeysToggle<CR>", { desc = "Toggle `show pressed keys` onto upper right corner, plugin." })
+  end,
 }

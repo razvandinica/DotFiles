@@ -28,7 +28,8 @@ vim.opt.autoindent = true
 
 -- Show/Hide Listchars
 vim.opt.listchars:append{
-  tab = "» ",
+  -- tab = "» ",
+  tab = "▏ ",
   precedes = "<",
   extends = ">",
   eol = "¶"
@@ -42,13 +43,14 @@ vim.opt.signcolumn = 'yes:2'
 
 -- Show cursor line and/or column
 vim.opt.cursorline = true
+vim.opt.cursorlineopt = 'screenline'
 -- vim.opt.cursorcolumn = true
 
 -- Store undos between sessions
 vim.opt.undofile = true
 
 -- Enable mouse mode usefull for resizing splits
-vim.opt.mouse = "a"
+-- vim.opt.mouse = "a"
 
 -- Turn show mode off, because it is laready showed by lualine
 vim.opt.showmode = false
@@ -71,3 +73,8 @@ vim.opt.inccommand = "split"
 -- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldmethod = "indent"
 vim.opt.foldminlines = 2
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "NvimTree",
+  command = "3j"
+})

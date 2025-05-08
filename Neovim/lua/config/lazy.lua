@@ -1,10 +1,3 @@
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-require("config.options")
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -22,6 +15,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+require("config.options")
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
@@ -30,11 +30,27 @@ require("lazy").setup({
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "solarized" } },
+  install = {
+    colorscheme = {
+      "solarized"
+    }
+  },
   -- automatically check for plugin updates
   checker = { enabled = true },
+  ui = {
+    border = "rounded",
+    -- title = " | Lazy | ",
+    -- pills = true,
+    -- wrap = true,
+    size = {
+      width = 0.58,
+      height = 0.75,
+    },
+  },
+  vim.keymap.set("n", "<Leader>ll", "<Cmd>Lazy<Cr>", { desc = "Shows lazy plugin interface." })
 })
 
 require("config.keymaps")
+require("config.commands")
 
 vim.cmd("ShowkeysToggle")

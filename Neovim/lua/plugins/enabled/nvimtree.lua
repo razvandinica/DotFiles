@@ -5,8 +5,8 @@ return {
     'nvim-tree/nvim-web-devicons'
   },
   config = function()
-    -- vim.g.loaded_netrw = 1
-    -- vim.g.loaded_netrwPlugin = 1
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
 
     local api = require("nvim-tree.api")
     vim.keymap.set('n', '<F9>', api.tree.toggle, {})
@@ -24,7 +24,7 @@ return {
       },
       view = {
         number = false,
-        width = 40,
+        width = 50,
         signcolumn = 'yes'
       },
       renderer = {
@@ -43,8 +43,7 @@ return {
         ignore = false,
       }
     })
-
-    --vim.keymap.set('n', '<leader>ig', ':lua nvt.setup({filters})<CR>', { noremap = true, silent = true })
-
+    -- vim.cmd("NvimTreeOpen")
+    -- vim.keymap.set('n', '<leader>ig', ':lua nvt.setup({filters})<CR>', { noremap = true, silent = true })
   end,
 }
