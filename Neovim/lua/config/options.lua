@@ -38,7 +38,7 @@ vim.opt.list = true
 
 -- Show numbers however you want
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes:2'
 
 -- Show cursor line and/or column

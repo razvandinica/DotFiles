@@ -11,7 +11,7 @@ return {
       insert_result_key = '<S-Tab>',
     },
   },
-  -- config = function(_, opts)
-  --   require("gemini").setup(opts)
-  -- end,
+  config = function(_, opts)
+    require("gemini").setup(opts)
+  end,
 }

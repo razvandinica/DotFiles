@@ -1,14 +1,24 @@
 return {
   -- https://github.com/stevearc/oil.nvim
   "stevearc/oil.nvim",
-  -- -@module 'oil',
-  -- -@type oil.SetupOpts,
+  ---@module 'oil',
+  ---@type oil.SetupOpts,
   lazy = false,
   dependencies = {
-    "nvim-tree/nvim-web-devicons"
+    "nvim-tree/nvim-web-devicons",
   },
   opts = {
-    default_file_explorer = false,
+    float = {
+      border = "rounded",
+      max_height = 0.7,
+      max_width = 0.5,
+      get_win_title = nil,
+      preview_split = "auto",
+      win_options = {
+        winblend = 0
+      }
+    },
+    default_file_explorer = true,
     columns = {
       "icon",
       "permissions",
@@ -42,8 +52,8 @@ return {
     -- Set to false to disable all of the above keymaps
     use_default_keymaps = true,
   },
-  config = function (_, opt)
-    require("oil").setup(opt)
+  config = function (_, opts)
+    require("oil").setup(opts)
     -- Oper parent directory in Oil
     vim.keymap.set("n", "-", "<Cmd>Oil --float<CR>", { desc = "Open parent directory in Oil." })
   end,

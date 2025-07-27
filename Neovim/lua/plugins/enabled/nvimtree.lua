@@ -10,8 +10,8 @@ return {
 
     local api = require("nvim-tree.api")
     vim.keymap.set('n', '<F9>', api.tree.toggle, {})
-    vim.keymap.set('n', '<leader>tc', "<cmd>NvimTreeCollapse<CR>")
-    vim.keymap.set('n', '<leader>tr', "<cmd>NvimTreeRefresh<CR>")
+    -- vim.keymap.set('n', '<leader>tc', "<cmd>NvimTreeCollapse<CR>")
+    vim.keymap.set('n', '<esc>r', "<cmd>NvimTreeRefresh<CR>")
 
 
     local nvt = require("nvim-tree")
@@ -38,6 +38,9 @@ return {
       },
       filters = {
         dotfiles = false,
+        -- custom = {
+        --   "^\\.pyc$",
+        -- },
       },
       git = {
         ignore = false,
