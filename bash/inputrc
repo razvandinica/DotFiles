@@ -1,9 +1,21 @@
-# Enable history search based on partial input
+# ~/.inputrc
+# This file configures the behavior of the readline library, which is used by
+# bash and other command-line tools for handling user input.
+
+# --- History Search ---
+# The following lines enable history searching with the Up and Down arrow keys.
+# This allows you to type the beginning of a command and then use the arrow
+# keys to cycle through matching commands in your history.
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
+# The bindings below are the standard Ctrl+R and Ctrl+S for history search.
+# They are commented out as the arrow key bindings above are often preferred.
 #"\C-r": reverse-search-history
 #"\C-s": forward-search-history
 
-# Make history search case-insensitive
+# --- Tab Completion ---
+# This setting makes command and filename completion (using the Tab key)
+# case-insensitive. For example, typing 'doc' and pressing Tab could complete
+# to 'Documents'.
 set completion-ignore-case on
